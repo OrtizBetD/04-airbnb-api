@@ -17,6 +17,14 @@ router.get("/", (req, res) => {
     });
 });
 
-// Create route for single house
+// router.get("/:id", (req, res) => {
+//   Houses.findById(req.params._id)
+//     .then(houses => {
+//       res.send(houses);
+//     })
+//     .catch(err => {
+//       res.send(err);
+//     });
+// });
 
 module.exports = router;
