@@ -3,8 +3,13 @@ const router = require("express").Router();
 
 router.get("/", (req, res) => {
   Houses.find(req.query)
+    .lean()
+    .select("images description type city region price bedrooms rating")
     .then(houses => {
-      // Set first of images as 'image'
+      houses.map(house => {
+        house.image = house.images[0];
+        delete house.images;
+      });
       res.send(houses);
     })
     .catch(err => {
