@@ -3,7 +3,7 @@ const router = require("express").Router();
 
 router.get(`/`, (req, res) => {
   Reviews.find(req.query)
-    .populate("author", "houses")
+    .populate("author", "house")
     .then(r => res.send(r));
 });
 

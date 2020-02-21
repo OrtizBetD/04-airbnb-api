@@ -3,8 +3,8 @@ const router = require("express").Router();
 
 router.get("/", (req, res) => {
   Houses.find(req.query)
-    .lean()
     .select("images description type city region price bedrooms rating")
+    .lean()
     .then(houses => {
       houses.map(house => {
         house.image = house.images[0];
@@ -20,8 +20,8 @@ router.get("/", (req, res) => {
 // router.get("/:id", (req, res) => {
 //   Houses.findById(req.params.id)
 //     .populate("type host amenities")
-//     .then(houses => {
-//       res.send(houses);
+//     .then(house => {
+//       res.send(house);
 //     })
 //     .catch(err => {
 //       res.send(err);

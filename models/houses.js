@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
-const objectId = mongoose.Schema.Types.ObjectId;
+const ObjectId = mongoose.Schema.Types.ObjectId;
 
 module.exports = mongoose.model("houses", {
   amenities: [
     {
-      type: objectId,
+      type: ObjectId,
       ref: "amenities"
     }
   ],
@@ -23,7 +23,7 @@ module.exports = mongoose.model("houses", {
     required: [true, "description is required"]
   },
   type: {
-    type: objectId,
+    type: ObjectId,
     ref: "types"
   },
   city: {
@@ -52,7 +52,7 @@ module.exports = mongoose.model("houses", {
   },
   rating: Number,
   host: {
-    type: objectId,
+    type: ObjectId,
     ref: "users"
   },
   lat: {

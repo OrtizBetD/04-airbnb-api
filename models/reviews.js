@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-const objectId = mongoose.Schema.Types.ObjectId;
+const ObjectId = mongoose.Schema.Types.ObjectId;
 const users = require("../models/users");
 module.exports = mongoose.model("reviews", {
   author: {
-    type: objectId,
+    type: ObjectId,
     ref: "users"
   },
   rating: {
@@ -15,7 +15,7 @@ module.exports = mongoose.model("reviews", {
     required: [true, "content is required"]
   },
   house: {
-    type: objectId,
+    type: ObjectId,
     ref: "houses"
   }
 });
