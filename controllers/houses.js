@@ -20,15 +20,15 @@ router.get("/", (req, res) => {
     });
 });
 
-// router.get("/:id", (req, res) => {
-//   Houses.findById(req.params.id)
-//     .populate("type host amenities")
-//     .then(house => {
-//       res.send(house);
-//     })
-//     .catch(err => {
-//       res.send(err);
-//     });
-// });
+router.get("/:id", (req, res) => {
+  Houses.findById(req.params.id)
+    .populate("type host amenities")
+    .then(house => {
+      res.send(house);
+    })
+    .catch(err => {
+      res.send(err);
+    });
+});
 
 module.exports = router;
