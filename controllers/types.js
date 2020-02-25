@@ -1,8 +1,8 @@
-const Types = require('../models/types')
-const router = require('express').Router()
+const Types = require("../models/types");
+const router = require("express").Router();
 
-router.get('/', (req, res) => {
-	// Respond with all types
-})
+router.get("/", (req, res) => {
+  Types.find({}).then(data => res.send(data));
+});
 
-module.exports = router
+module.exports = router;
