@@ -60,6 +60,12 @@ module.exports = mongoose.model("houses", {
     type: mongoose.Schema.Types.ObjectId,
     ref: "reviews"
   },
+
+  host: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "users"
+  },
+
   lat: {
     type: Number
   },
